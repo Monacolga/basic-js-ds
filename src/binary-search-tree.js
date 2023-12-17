@@ -54,24 +54,76 @@ class BinarySearchTree {
     }
   }
 
-  find(/* data */) {
-    throw new NotImplementedError("Not implemented");
-    // remove line with error and write your code here
+  find(data) {
+    return findElement(this.node, data);
+    function findElement(node, data) {
+      if (!node) {
+        return null;
+      }
+      if (node.data === data) {
+        return node;
+      }
+      if (data < node.data) {
+        return findElement(node.left, data);
+      }
+      return findElement(node.right, data);
+    }
   }
 
-  remove(/* data */) {
+  remove(/*data*/) {
     throw new NotImplementedError("Not implemented");
-    // remove line with error and write your code here
+    // this.node = removeNode(this.node, data);
+
+    // function removeNode(node, data) {
+    //   if (!node) {
+    //     return;
+    //   }
+    //   // if (data === node.data) {
+    //   //   this.node = removeNode(node, data);
+    //   //   return;
+    //   // }
+    //   if (data < node.data) {
+    //     node.left = removeNode(node.left, data);
+    //     return;
+    //   } else if (data > node.data) {
+    //     node.right = removeNode(node.right, data);
+    //     return;
+    //   } else {
+    //     if (!node.left && !node.right) {
+    //       return;
+    //     }
+    //     if (!node.left) {
+    //       node = node.right;
+    //       return node;
+    //     }
+    //     if (!node.right) {
+    //       node = node.left;
+    //       return node;
+    //     }
+    //   }
+    // }
   }
 
   min() {
-    throw new NotImplementedError("Not implemented");
-    // remove line with error and write your code here
+    let node = this.node;
+    if (!node) {
+      return null;
+    }
+    while (node.left) {
+      node = node.left;
+    }
+    return node.data;
   }
 
   max() {
-    throw new NotImplementedError("Not implemented");
-    // remove line with error and write your code here
+    let node = this.node;
+    if (!node) {
+      return null;
+    }
+    while (node.right) {
+      node = node.right;
+    }
+    return node.data;
   }
 }
 
