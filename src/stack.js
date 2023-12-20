@@ -27,17 +27,6 @@ class Stack {
   peek() {
     return this.elements[this.elements.length - 1];
   }
-  // push(element) {
-  //   this.item[this.item.length] = element;
-  // }
-
-  // pop() {
-  //   return this.item[item.length - 1];
-  // }
-
-  // peek() {
-  //   return this.item[item.length - 1];
-  // }
 }
 
 module.exports = {
